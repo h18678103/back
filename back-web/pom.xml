@@ -11,6 +11,8 @@
 
     <artifactId>back-web</artifactId>
 
+    <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>com.sky</groupId>
@@ -18,5 +20,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>back-web</finalName>
+    </build>
 
 </project>
