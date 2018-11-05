@@ -37,4 +37,11 @@ public class TestController implements DataExceptionSolver {
         return "abc_good";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "t4.do")
+    public String t4(int id){
+        System.out.println("t3.do");
+        return "abc_good";
+    }
+
 }
