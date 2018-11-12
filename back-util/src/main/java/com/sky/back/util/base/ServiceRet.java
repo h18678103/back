@@ -60,6 +60,13 @@ public class ServiceRet<T> implements RetInfo, Serializable {
         return this;
     }
 
+    public ServiceRet<T> fail(RetInfoEnum retInfoEnum, T content){
+        this.retCode = retInfoEnum.getRetCode();
+        this.retMsg = retInfoEnum.getRetMsg();
+        this.content = content;
+        return this;
+    }
+
 
     @Override
     public String getRetCode() {
