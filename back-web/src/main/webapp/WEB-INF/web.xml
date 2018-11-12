@@ -7,6 +7,36 @@
     <display-name>web</display-name>
 
 
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/applicationContext*.xml</param-value>
+    </context-param>
+
+    <!-- spring-context-listener -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+
+
     <!--设置所有请求的默认编码为UTF-8-->
     <filter>
         <filter-name>CharacterFilter</filter-name>
@@ -27,31 +57,7 @@
     </filter-mapping>
 
 
-    <!-- spring-context-listener -->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/applicationContext*.xml</param-value>
-    </context-param>
-
-    <servlet>
-        <servlet-name>DispatcherServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring/dispatcher-servlet.xml</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-        <async-supported>true</async-supported>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>DispatcherServlet</servlet-name>
-        <url-pattern>*.do</url-pattern>
-    </servlet-mapping>
 
     <welcome-file-list><!--指定欢迎页面-->
         <welcome-file>index.jsp</welcome-file>

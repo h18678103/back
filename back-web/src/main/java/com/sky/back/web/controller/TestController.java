@@ -2,6 +2,7 @@ package com.sky.back.web.controller;
 
 import com.sky.back.dao.entity.Test;
 import com.sky.back.service.api.TestService;
+import com.sky.back.web.controller.base.BaseController;
 import com.sky.back.web.controller.base.DataExceptionSolver;
 import com.sky.back.web.controller.base.SystemException;
 import javax.annotation.Resource;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping(value = "test")
-public class TestController implements DataExceptionSolver {
+public class TestController extends BaseController {
 
     @Resource
     private TestService testService;
